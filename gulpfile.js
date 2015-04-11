@@ -48,7 +48,7 @@ gulp.task('images', function() {
 gulp.task('templates',function(){
 	gulp.src('src/templates/**/*.html')
         .pipe($.html2tpl('templates.js' ))
-        .pipe(gulp.dest('dist/resources/templates'));	
+        .pipe(gulp.dest('kiosk/templates'));	
 });
 
 // Compile and Automatically Prefix Stylesheets
@@ -73,7 +73,7 @@ gulp.task('html', function () {
 
     return gulp.src('src/*.html')
         .pipe(assets)
-        //.pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
+        .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
         .pipe($.if('*.css', $.csso()))
         .pipe(assets.restore())
         .pipe($.useref())
@@ -96,7 +96,7 @@ gulp.task('scripts', function() {
 });
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist','src/build']));
+gulp.task('clean', del.bind(null, ['.tmp', 'kiosk','dist','src-builds']));
 
 // Watch Files For Changes & Reload
 gulp.task('serve', ['styles'], function() {
