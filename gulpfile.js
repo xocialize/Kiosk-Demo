@@ -98,50 +98,6 @@ gulp.task('scripts', function() {
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['.tmp', 'kiosk','dist','src-builds']));
 
-// Watch Files For Changes & Reload
-gulp.task('serve', ['styles'], function() {
-	
-	
-  browserSync({
-    notify: false,
-    // Customize the BrowserSync console logging prefix
-    logPrefix: 'MTRL',
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
-    // https: true,
-    server: ['.tmp', 'src']
-  });
-
-  gulp.watch(['src/**/**/**/*.html'], reload);
-  gulp.watch(['src/**/**/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['src/scripts/**/*.js'], ['jshint']);
-  gulp.watch(['src/images/**/*'], reload);
-});
-
-// Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function() {
-	
-	var config = {
-    
-		notify: false,
-		logPrefix: 'MATERIALISH-MAIN',
-		ui: {
-			port: 8080,
-			weinre: {
-				port: 9090
-			}
-		},
-		// Run as an https by uncommenting 'https: true'
-		// Note: this uses an unsigned certificate which on first access
-		//       will present a certificate warning in the browser.
-		// https: true,
-		server: './dist',
-		baseDir: "./dist"
-  
-	};
-  browserSync(config);
-});
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
