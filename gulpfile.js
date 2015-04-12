@@ -16,9 +16,8 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
 var runSequence = require('run-sequence');
-var browserSync = require('browser-sync');
 var pagespeed = require('psi');
-var reload = browserSync.reload;
+
 
 
 /* This isn't really needed as we're ending up installed on an ios device but... */
