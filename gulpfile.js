@@ -18,8 +18,6 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var pagespeed = require('psi');
 
-
-
 /* This isn't really needed as we're ending up installed on an ios device but... */
 var AUTOPREFIXER_BROWSERS = [ 
   'ie >= 10',
@@ -47,7 +45,7 @@ gulp.task('images', function() {
 gulp.task('templates',function(){
 	gulp.src('src/templates/**/*.html')
         .pipe($.html2tpl('templates.js' ))
-        .pipe(gulp.dest('kiosk/templates'));	
+        .pipe(gulp.dest('kiosk/scripts'));	
 });
 
 // Compile and Automatically Prefix Stylesheets
