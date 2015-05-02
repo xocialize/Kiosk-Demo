@@ -81,7 +81,8 @@ gulp.task('html', function () {
 // Concatenate And Minify JavaScript
 gulp.task('scripts', function() {
   var sources = [
-    'node_modules/jquery/dist/jquery.js'
+    'node_modules/jquery/dist/jquery.js',
+	'src/scripts/app.js'
 	
   ];
   return gulp.src(sources)
