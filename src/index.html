@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>.: Kiosk-Demo :.</title>
+    <!-- Styles: Note that main.css contains imports for the rest of the styling and will be concatinated via gulp sass -->
+    <!-- build:css(src/) styles/main.min.css -->
+    <link rel="stylesheet" href="build/styles/main.css">
+    <!-- endbuild -->
+    <style>
+    	.demo { display:none; }
+    
+    	body:before {
+          content: "";
+          position: fixed;
+          top: -10px;
+          left: 0;
+          width: 100%;
+          height: 10px;
+
+          -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+              -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+                         box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+
+          z-index: 9999;
+		  
+		}
+    </style>
+</head>
+<body>
+	<p>Hello World</p>
+    
+    <!-- build:js(src/) scripts/vendor.min.js -->
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/swiper/dist/js/swiper.jquery.js"></script>
+    <!-- endbuild -->
+    <script src="scripts/templates.js"></script>
+    <!-- build:js(src/) scripts/app.min.js -->
+    <script src="scripts/app.js"></script>
+    <!-- endbuild -->    
+    
+    
+</body>
+</html>

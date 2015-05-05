@@ -78,10 +78,13 @@ gulp.task('html', function () {
 		.pipe($.size({title: 'html'}));
 });
 
+
+
 // Concatenate And Minify JavaScript
 gulp.task('scripts', function() {
   var sources = [
     'node_modules/jquery/dist/jquery.js',
+	'node_modules/swiper/dist/js/swiper.jquery.js',
 	'src/scripts/app.js'
 	
   ];
@@ -94,12 +97,12 @@ gulp.task('scripts', function() {
 });
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['.tmp', 'kiosk','dist','src-builds']));
+gulp.task('clean', del.bind(null, ['.tmp', 'kiosk','dist','src/build']));
 
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
-  runSequence(['styles','templates'], ['html', 'images', 'scripts'], cb);
+  runSequence(['styles','templates'], ['html', 'images'], cb);
 });
 
 
