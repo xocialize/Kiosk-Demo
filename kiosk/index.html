@@ -9,7 +9,7 @@
     <style>
 		.demo { display:none; }
 	
-		body:before {
+		body:before, navigation-menu:before {
 		  content: "";
 		  position: fixed;
 		  top: -10px;
@@ -43,13 +43,13 @@
 		.swiper-container {
 			position:absolute;
 			top:0;
-			bottom:120px;
+			bottom:80px;
 			left:0;
 			right:0;
 		}
 		
 		
-		.swiper-slide {
+		.swiper-slide, .navigation-button {
 			text-align: center;
 			font-size: 18px;
 			background: #fff;
@@ -70,13 +70,19 @@
 			
 		}
 		
+		.navigation-button{
+			height:100%;	
+			background-color:#3E3B3B;
+			color:#fff;	
+			
+		}
 		.navigation-menu {
 			
 			position:absolute;
 			bottom:0;
 			left:0;
 			right:0;
-			height:120px;
+			height:80px;
 			background-color:#EF1C1F;
 			
 			
@@ -88,6 +94,9 @@
 			position:relative;
 			
 		}
+		
+		#hero_pic { height:150px; }
+		
     </style>
 </head>
 <body>
@@ -104,7 +113,9 @@
             <div class="swiper-pagination"></div>
         </div>
         <div class="navigation-menu">
-        
+        	<div class="navigation-button">
+            	Testing
+            </div>
         </div>
         
     </div>
