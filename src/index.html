@@ -72,10 +72,12 @@
 			
 		}
 		
+				
 		.navigation-button{
 			height:100%;	
 			background-color:#3E3B3B;
 			color:#fff;	
+			flex-grow: 1; 
 			
 		}
 		.navigation-menu {
@@ -86,6 +88,12 @@
 			right:0;
 			height:80px;
 			background-color:#EF1C1F;
+			display: -webkit-flex;
+		   display: flex;
+		   -webkit-flex-direction: row; 
+		   flex-direction: row;
+		   -webkit-justify-content: flex-start;
+		   justify-content: flex-start;
 			
 			
 		}
@@ -117,6 +125,9 @@
         <div class="navigation-menu">
         	<div class="navigation-button">
             	Testing
+            </div>
+            <div class="navigation-button">
+            	Testing 2
             </div>
         </div>
         
