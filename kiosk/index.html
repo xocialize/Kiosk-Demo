@@ -101,7 +101,7 @@
 			flex-grow: 1; 
 			-webkit-flex-grow: 1;
 			border-right:#6C6969 thin inset;
-			
+			cursor:pointer;
 			
 		}
 		.navigation-menu {
@@ -414,16 +414,16 @@
             <div class="swiper-pagination"></div>
         </div>
         <div class="navigation-menu">
-        	<div class="navigation-button">
+        	<div class="navigation-button" data-slide=0 >
             	Intro
             </div>
-            <div class="navigation-button">
+            <div class="navigation-button" data-slide=1 >
             	Uses
             </div>
-            <div class="navigation-button">
-            	Tech
+            <div class="navigation-button" data-slide=2 >
+            	Features
             </div>
-            <div class="navigation-button">
+            <div class="navigation-button" data-slide=3 >
             	Compare
             </div>
         </div>
@@ -435,12 +435,24 @@
     <script src="scripts/app.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true
-    });
+		var swiper = new Swiper('.swiper-container', {
+			pagination: '.swiper-pagination',
+			paginationClickable: true
+		});
 	
-	alert("Testing");
+		$.each($('.navigation-button'),function(e,v){
+		
+			$(this).on("click",function(event){
+				
+				event.preventDefault();
+				
+				console.log("click");
+				
+				swiper.slideTo($(this).data('slide'), 100, false);
+		
+			});
+		
+		});
 	
 	</script>
     
