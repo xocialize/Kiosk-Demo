@@ -42,6 +42,13 @@ gulp.task('images', function() {
     .pipe($.size({title: 'images'}));
 });
 
+// Copy Web Fonts To Dist
+gulp.task('fonts', function() {
+  return gulp.src(['src/fonts/**'])
+    .pipe(gulp.dest('kiosk/fonts'))
+    .pipe($.size({title: 'fonts'}));
+});
+
 gulp.task('templates',function(){
 	gulp.src('src/templates/**/*.html')
         .pipe($.html2tpl('templates.js' ))
@@ -102,7 +109,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'kiosk','dist','src/build']));
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
-  runSequence(['styles','templates'], ['html', 'images'], cb);
+  runSequence(['styles','templates'], ['html', 'images','fonts'], cb);
 });
 
 
