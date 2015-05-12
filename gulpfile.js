@@ -109,7 +109,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'kiosk','dist','src/build']));
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
-  runSequence(['styles','templates'], ['html', 'images','fonts'], cb);
+  runSequence(['styles','templates'], ['html', 'images'], cb);
 });
 
 
